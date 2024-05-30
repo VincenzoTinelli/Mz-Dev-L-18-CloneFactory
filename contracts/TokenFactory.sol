@@ -1,4 +1,4 @@
-// "SPDX-License-Indentifier: MIT"
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -29,7 +29,7 @@ contract TokenFactory is Ownable {
       newOwner
     );
     tokenContracts.push(tokenClone);
-    tokenCloneCounter++;
+    tokenCloneCounter += 1;
     return tokenClone;
   }
 

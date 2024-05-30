@@ -11,7 +11,7 @@ const { ZERO_ADDRESS } = constants;
 const { expect } = require("chai");
 
 const TokenFactory = artifacts.require("TokenFactory");
-const Erc20Preset = articafts.require("ERC20PresetFixedSupplyUpgradeable");
+const Erc20Preset = artifacts.require("ERC20PresetFixedSupplyUpgradeable");
 
 const fromWei = (x) => web3.utils.fromWei(x.toString());
 const toWei = (x) => web3.utils.toWei(x.toString());
@@ -36,7 +36,7 @@ contract("Token Factory", function (accounts) {
     );
     let TokenCounter = await tokenFactoryContract.getTokenCounter();
     console.log("Deployed Token Counter: " + TokenCounter.toString());
-    let TokenProxy1Address = await tokenFactoryContract.getTokenAddress(
+    let TokenProxy1Address = await tokenFactoryContract.getTokenAddresses(
       TokenCounter - 1
     );
     console.log(
@@ -55,7 +55,7 @@ contract("Token Factory", function (accounts) {
     );
     TokenCounter = await tokenFactoryContract.getTokenCounter();
     console.log("Deployed Token Counter: " + TokenCounter.toString());
-    let TokenProxy2Address = await tokenFactoryContract.getTokenAddress(
+    let TokenProxy2Address = await tokenFactoryContract.getTokenAddresses(
       TokenCounter - 1
     );
     console.log(
